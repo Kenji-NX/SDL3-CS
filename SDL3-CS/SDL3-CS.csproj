@@ -52,10 +52,12 @@
       <PackagePath>runtimes/win-arm64/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    <!--
     <None Include="$(MSBuildThisFileDirectory)..\native\win-x86\SDL3.dll">
       <PackagePath>runtimes/win-x86/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    -->
     <None Include="$(MSBuildThisFileDirectory)..\native\osx-x64\libSDL3.dylib">
       <PackagePath>runtimes/osx-x64/native</PackagePath>
       <Pack>true</Pack>
@@ -68,38 +70,48 @@
       <PackagePath>runtimes/linux-x64/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    <!--
     <None Include="$(MSBuildThisFileDirectory)..\native\linux-x86\libSDL3.so">
       <PackagePath>runtimes/linux-x86/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    -->
     <None Include="$(MSBuildThisFileDirectory)..\native\linux-arm64\libSDL3.so">
       <PackagePath>runtimes/linux-arm64/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    <!--
     <None Include="$(MSBuildThisFileDirectory)..\native\linux-arm\libSDL3.so">
       <PackagePath>runtimes/linux-arm/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    -->
     <None Include="$(MSBuildThisFileDirectory)..\native\ios\SDL3.xcframework\**\*">
       <PackagePath>runtimes/ios/native/SDL3.xcframework</PackagePath>
       <Pack>true</Pack>
     </None>
+    <!--
     <None Include="$(MSBuildThisFileDirectory)..\native\android\armeabi-v7a\libSDL3.so">
       <PackagePath>runtimes/android-arm/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    -->
     <None Include="$(MSBuildThisFileDirectory)..\native\android\arm64-v8a\libSDL3.so">
       <PackagePath>runtimes/android-arm64/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    <!--
     <None Include="$(MSBuildThisFileDirectory)..\native\android\x86_64\libSDL3.so">
       <PackagePath>runtimes/android-x64/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    -->
+    <!--
     <None Include="$(MSBuildThisFileDirectory)..\native\android\x86\libSDL3.so">
       <PackagePath>runtimes/android-x86/native</PackagePath>
       <Pack>true</Pack>
     </None>
+    -->
     <EmbeddedJar Include="Jars\SDL3AndroidBridge.jar"/>
   </ItemGroup>
 

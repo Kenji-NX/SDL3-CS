@@ -15,14 +15,14 @@
     <Authors>ppy Pty Ltd</Authors>
     <Company>ppy Pty Ltd</Company>
     <Copyright>Copyright (c) 2024 ppy Pty Ltd</Copyright>
-    <Product>ppy.SDL3-CS</Product>
-    <PackageId>ppy.SDL3-CS</PackageId>
+    <Product>Ryujinx.SDL3-CS</Product>
+    <PackageId>Ryujinx.SDL3-CS</PackageId>
     <PackageTags>SDL;SDL3;SDL3-CS</PackageTags>
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/ppy/SDL3-CS</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Kenji-NX/SDL3-CS</PackageProjectUrl>
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/ppy/SDL3-CS</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Kenji-NX/SDL3-CS</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

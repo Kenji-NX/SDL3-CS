@@ -39,4 +39,4 @@ jobs:
           path: artifacts/Ryujinx.*.nupkg
 
       - name: Publish tagged release to nuget.org
-        run: dotnet nuget push artifacts/Ryuinx.*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+        run: dotnet nuget push artifacts/Ryujinx.*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}

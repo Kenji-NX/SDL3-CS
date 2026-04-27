@@ -34,11 +34,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="libclang" Version="17.0.4">
+    <PackageReference Include="libclang" Version="21.1.8">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
 
-    <PackageReference Include="libClangSharp" Version="17.0.4">
+    <PackageReference Include="libClangSharp" Version="21.1.8.2">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>

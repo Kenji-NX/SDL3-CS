@@ -27,6 +27,40 @@ export DEBIAN_FRONTEND=noninteractive
 if [[ $BUILD_PLATFORM != 'Android' ]]; then
     NATIVE_PATH="$NAME"
 
+    if [[ $BUILD_PLATFORM == 'Windows' ]]; then
+        LIBUSB_VERSION="1.0.29"
+        LIBUSB_ARCHIVE="C:/temp/libusb-${LIBUSB_VERSION}.7z"
+        LIBUSB_EXTRACT_DIR="C:/temp/libusb-${LIBUSB_VERSION}"
+    
+        mkdir -p "C:/temp"
+    
+        powershell -Command "Invoke-WebRequest \
+            'https://github.com/libusb/libusb/releases/download/v${LIBUSB_VERSION}/libusb-${LIBUSB_VERSION}.7z' \
+            -OutFile '${LIBUSB_ARCHIVE}'"
+    
+        7z "-o${LIBUSB_EXTRACT_DIR}" x "${LIBUSB_ARCHIVE}"
+  
+        if [[ $NAME != 'win-x86' ]]; then
+            MSVC_ARCH_DIR="MS64"
+        else
+            MSVC_ARCH_DIR="MS32"
+        fi
+  
+        LIBUSB_INCDIR="${LIBUSB_EXTRACT_DIR}/include"
+        LIBUSB_LIBDIR="${LIBUSB_EXTRACT_DIR}/VS2022/${MSVC_ARCH_DIR}/dll"
+  
+        if [[ ! -f "${LIBUSB_INCDIR}/libusb.h" ]]; then
+            echo "ERROR: libusb.h not found at ${LIBUSB_INCDIR}"
+            exit 1
+        fi
+        if [[ ! -f "${LIBUSB_LIBDIR}/libusb-1.0.lib" ]]; then
+            echo "ERROR: libusb-1.0.lib not found at ${LIBUSB_LIBDIR}"
+            exit 1
+        fi
+  
+        export LibUSB_ROOT="${LIBUSB_INCDIR};${LIBUSB_LIBDIR}"
+    fi
+
     if [[ $BUILD_PLATFORM == 'Linux' ]]; then
         # Setup Linux dependencies
         if [[ $TARGET_APT_ARCH == :i386 ]]; then

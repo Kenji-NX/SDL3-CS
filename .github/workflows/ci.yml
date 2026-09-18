@@ -17,10 +17,10 @@ jobs:
       CI_DONT_TARGET_ANDROID: 1
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install .NET 8.0.x
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: "8.0.x"
 
@@ -33,16 +33,16 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup JDK 11
-        uses: actions/setup-java@v4
+      - name: Setup JDK 21
+        uses: actions/setup-java@v6
         with:
           distribution: microsoft
-          java-version: 11
+          java-version: 21
 
       - name: Install .NET 8.0.x
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: "8.0.x"
 
@@ -60,10 +60,10 @@ jobs:
       CI_DONT_TARGET_ANDROID: 1
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install .NET 8.0.x
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: "8.0.x"
 

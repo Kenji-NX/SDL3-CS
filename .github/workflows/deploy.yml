@@ -9,21 +9,21 @@ jobs:
   pack:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 8.0.x
 
-      - name: Setup JDK 17
-        uses: actions/setup-java@v4
+      - name: Setup JDK 21
+        uses: actions/setup-java@v6
         with:
           distribution: microsoft
-          java-version: 17
+          java-version: 21
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       - name: Install .NET workloads
         run: dotnet workload restore
@@ -33,7 +33,7 @@ jobs:
           dotnet pack SDL3-CS/SDL3-CS.csproj -c Release /p:Version=$(git describe --exact-match --tags HEAD) -o artifacts
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Packages
           path: artifacts/Ryujinx.*.nupkg
